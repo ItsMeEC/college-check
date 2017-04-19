@@ -1,6 +1,6 @@
 var express = require('express'),
 var mongoose =require('mongoose');
-var db = mongoose.connect('mongodb://localhost/college');
+var db = mongoose.connect('mongodb://localhost/college/');
 var Col = require('./models/collegeModel');
 var bodyParser = require('body-parser');
 const passport = require('passport');
@@ -14,11 +14,6 @@ var commanRouter = express.Router();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-require('./config/passport')(passport);
 
 app.use('/users', users);
 
@@ -38,10 +33,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req,res){
 	res.send('welcome to my api');
-});
-
-app.get('/image', function(req,res){
-              res.end(img, 'binary');
 });
 
 app.listen(port, function(){
