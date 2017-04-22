@@ -16,10 +16,14 @@
   "author": "Evan Ciavaglia",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "consolidate": "^0.14.5",
     "express": "^4.15.2",
-    "mongoose": "^4.9.4",
-    "passport":"*",
-    "passport-jwt":"*"
+    "mongoose": "^4.9.5",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "*",
+    "swig": "^1.4.2"
   }
 }
