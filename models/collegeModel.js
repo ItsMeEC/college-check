@@ -15,4 +15,4 @@ var collegeModel = new Schema({
 	
 });
 
-module.exports = mongoose.model('College', collegeModel, 'college');
+module.exports = mongoose.model('College', collegeModel, 'fullCollegeDatabase');
