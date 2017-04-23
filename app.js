@@ -38,9 +38,9 @@ app.get('/login',function(req,res){
 	res.render('login')
 })
 
-app.get('/', function(req,res){
-	res.send('welcome to my api');
-});
+app.get('/search',function(req,res){
+	res.render('search')
+})
 
 app.listen(port, function(){
 	console.log("running");
