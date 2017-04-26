@@ -13,7 +13,7 @@ var routes = function(Col){
 	})
 	.get(function(req,res){ 
 		var query =req.query;
-		col.find(query, function(err,books){
+		col.find(query, function(err,college){
 			if(err){
 				console.log(err);
 				res.status(500).send(err);
@@ -24,7 +24,7 @@ var routes = function(Col){
 	});
 
 	colRouter.use('/:colId',function(req,res,next){
-		col.findById(req.params.colId, function(err,book){
+		col.findById(req.params.colId, function(err,college){
 			if(err){
 				console.log(err);
 				res.status(500).send(err);

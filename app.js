@@ -4,10 +4,8 @@ var db = mongoose.connect('mongodb://localhost/college/');
 var Col = require('./models/collegeModel');
 var bodyParser = require('body-parser');
 const passport = require('passport');
-var cons = require('consolidate');
 var app = express();
-app.engine('html', cons.swig);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 app.set('views', __dirname+ '/views');
 
 const users = require('./users/router');
@@ -26,7 +24,8 @@ commanRouter.route('/getColleges')
 			if(err)
 			   res.status(500).send(err);
 			else
-				res.json(data);
+				console.log(data);
+			res.render('college',{name: data});
 		})
 });
 
@@ -35,7 +34,7 @@ app.use('/api', commanRouter);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/login',function(req,res){
-	res.render('login')
+	res.render('login', {name:"Evan"})
 })
 
 app.get('/search',function(req,res){
